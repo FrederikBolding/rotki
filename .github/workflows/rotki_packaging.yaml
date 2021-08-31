@@ -91,7 +91,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04]
-        python-version: [3.7]
+        python-version: [3.9.6]
         node-version: [14.x]
     runs-on: ${{ matrix.os }}
     needs: create_draft
@@ -102,7 +102,7 @@ jobs:
       - name: Set up python
         uses: actions/setup-python@v1
         with:
-          python-version: '3.7'
+          python-version: '3.9.6'
       - name: Setup node
         uses: actions/setup-node@v1
         with:
@@ -184,7 +184,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest]
-        python-version: [3.7]
+        python-version: [3.9.6]
         node-version: [14.x]
     runs-on: ${{ matrix.os }}
     needs: create_draft
@@ -276,7 +276,7 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest ]
-        python-version: [ 3.7 ]
+        python-version: [ 3.9.6 ]
         node-version: [ 14.x ]
     runs-on: ${{ matrix.os }}
     needs: create_draft
@@ -287,7 +287,7 @@ jobs:
       - name: Set up python
         uses: actions/setup-python@v1
         with:
-          python-version: '3.7'
+          python-version: '3.9.6'
       - name: Setup node
         uses: actions/setup-node@v1
         with:
