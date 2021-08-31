@@ -125,7 +125,8 @@ jobs:
           sudo ldconfig
       - name: Setup backend
         run: |
-          pip install -r requirements.txt
+          pip install --upgrade "pip<19.0.0" wheel
+          pip install --only-binary=py-sr25519-bindings,py-ed25519-bindings,py-bip39-bindings -r requirements.txt
           pip install -e .
       - name: Run integration tests
         working-directory: ./frontend
