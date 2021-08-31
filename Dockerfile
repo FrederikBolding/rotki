@@ -7,9 +7,9 @@ RUN apk add python3 make g++
 RUN npm install -g npm@7 && if ! npm ci --exit-code; then npm ci; fi
 RUN npm run docker:build
 
-FROM python:3.7-buster as backend-build-stage
+FROM python:3.9.6-buster as backend-build-stage
 
-ARG PYINSTALLER_VERSION=3.5
+ARG PYINSTALLER_VERSION=4.5.1
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
@@ -33,7 +33,7 @@ RUN rustup default nightly-2021-03-24
 
 WORKDIR /app
 
-RUN pip install maturin==0.11.2 py-sr25519-bindings==0.1.2 wheel
+RUN pip install maturin==0.11.3 py-sr25519-bindings==0.1.3 wheel
 RUN pip install -r requirements.txt
 
 COPY . /app

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-: "${PYINSTALLER_VERSION:=3.5}"
+: "${PYINSTALLER_VERSION:=4.5.1}"
 WORKDIR=$PWD
 BACKEND_DIST_DIR="rotkehlchen_py_dist"
 # cleanup before starting to package stuff
