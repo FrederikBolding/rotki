@@ -119,7 +119,7 @@ jobs:
           python-version: '3.9.6'
       - name: Install dependencies
         run: |
-          pip install --upgrade "pip<19.0.0" wheel
+          pip install --upgrade pip wheel
           pip install --only-binary=py-sr25519-bindings,py-ed25519-bindings,py-bip39-bindings -r requirements_lint.txt
           pip install -e .
           git rev-parse HEAD
@@ -165,9 +165,9 @@ jobs:
             ${{ runner.os }}-testdir-
       - name: Install dependencies
         run: |
-          pip install --upgrade "pip<19.0.0" wheel
+          pip install --upgrade pip wheel
           pip install codecov pytest-cov
-          pip install -r requirements_dev.txt
+          pip install --only-binary=py-sr25519-bindings,py-ed25519-bindings,py-bip39-bindings -r requirements_dev.txt
           pip install -e .
       - name: Run Test
         run: |
@@ -231,6 +231,7 @@ jobs:
           sudo ldconfig
       - name: Setup backend
         run: |
+          pip install --upgrade pip wheel
           pip install --only-binary=py-sr25519-bindings,py-ed25519-bindings,py-bip39-bindings -r requirements_dev.txt
           pip install -e .
       - name: Restore dependencies
